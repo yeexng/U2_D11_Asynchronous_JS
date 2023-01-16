@@ -6,10 +6,10 @@ const options = {
   },
 };
 
-const getAlbum = () => {
+const getAlbum = (search) => {
   fetch(
-    "https://striveschool-api.herokuapp.com/api/deezer/search?q=pinkfloyd",
-    options
+    `https://striveschool-api.herokuapp.com/api/deezer/search?q=${search},
+    `
   ) //promise pending
     .then((rawAlbums) => rawAlbums.json()) //also promise
     .then((albums) => {
