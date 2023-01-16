@@ -7,10 +7,13 @@ const options = {
 };
 
 const getAlbum = () => {
-  fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=pinkfloyd") //promise pending
+  fetch(
+    "https://striveschool-api.herokuapp.com/api/deezer/search?q=pinkfloyd",
+    options
+  ) //promise pending
     .then((rawAlbums) => rawAlbums.json()) //also promise
     .then((albums) => {
-      renderAlbums(albums);
+      renderAlbums(albums.data);
     })
 
     .catch((err) => renderError(err));
